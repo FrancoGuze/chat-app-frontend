@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --color-custom-hover: #b5dead;
+  --color-custom-green-50: #e3ecd4;
+  --color-custom-green-100: #D1E0B8;
+  --color-custom-green-400: #b0ca87;
+  --color-custom-green-600: #809848;
+  --color-custom-green-800: #697d3b;
+  --color-custom-brown-700: #442220;
+  --color-custom-brown-900: #2e0014;
+}
+
+.chat-msgs {
+  scrollbar-width: thin;
+ scrollbar-color:#809848 #D1E0B8;
+ scrollbar-gutter: stable;
+ scrollbar-track-color: #809848;
+}
