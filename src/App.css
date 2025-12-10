@@ -1,19 +1,49 @@
 @import "tailwindcss";
+ /* original base color 809848 */
+:root {
+  --primary-color: #809848;
+  --secondary-color: #442220;
+}
 
 @theme {
-  --color-custom-hover: #b5dead;
-  --color-custom-green-50: #e3ecd4;
-  --color-custom-green-100: #D1E0B8;
-  --color-custom-green-400: #b0ca87;
-  --color-custom-green-600: #809848;
-  --color-custom-green-800: #697d3b;
-  --color-custom-brown-700: #442220;
-  --color-custom-brown-900: #2e0014;
+  /* Hover */
+  --color-primary-hover: oklch(
+    from var(--primary-color) calc(l * 1.35) calc(c * 0.8) calc(h * 0.9)
+  );
+
+  /* 50 */
+  --color-primary-50: oklch(
+    from var(--primary-color) calc(l * 1.45) calc(c * 0.25) h
+  );
+
+  /* 100 */
+  --color-primary-100: oklch(
+    from var(--primary-color) calc(l * 1.35) calc(c * 0.35) h
+  );
+
+  /* 400 */
+  --color-primary-400: oklch(
+    from var(--primary-color) calc(l * 1.15) calc(c * 0.9) h
+  );
+
+  /* 600 (BASE) */
+  --color-primary-600: oklch(from var(--primary-color) l c h);
+
+  /* 800 */
+  --color-primary-800: oklch(
+    from var(--primary-color) calc(l * 0.85) calc(c * 0.75) h
+  );
+
+  --color-custom-brown-700: oklch(from var(--secondary-color) l c h);
+
+  --color-custom-brown-900: oklch(
+    from var(--secondary-color) calc(l * 0.7) calc(c * 0.75) h
+  );
 }
 
 .chat-msgs {
   scrollbar-width: thin;
- scrollbar-color:#809848 #D1E0B8;
- scrollbar-gutter: stable;
- scrollbar-track-color: #809848;
+  scrollbar-color: #809848 #d1e0b8;
+  scrollbar-gutter: stable;
+  scrollbar-track-color: #809848;
 }

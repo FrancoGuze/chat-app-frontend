@@ -64,7 +64,7 @@ function App() {
     return <AccessPage />;
   } else {
     return (
-      <div className="w-screen h-screen relative bg-custom-green-600 overflow-x-hidden">
+      <div className="w-screen h-screen relative bg-primary-600 overflow-x-hidden">
         <Contacts />
       </div>
     );
