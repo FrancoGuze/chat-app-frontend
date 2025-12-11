@@ -118,7 +118,6 @@ export const AccessPage = () => {
             ],
           };
 
-          console.log({ aca: i % 2 === 1 }, cords[cordsVal[0]][i]);
           return (
             <g
               key={i}
@@ -139,7 +138,7 @@ export const AccessPage = () => {
 
         <form onSubmit={handleSubmit} className="flex flex-row gap-4">
           <input
-            className="bg-primary-400 focus:bg-primary-400/50 border-2 border-custom-brown-700 focus:border-custom-brown-900 outline-0 rounded-xl px-1 py-0.5 transition-all duration-75"
+            className="bg-primary-400 focus:bg-primary-400/50 border-2 border-secondary-700 focus:border-secondary-900 outline-0 rounded-xl px-1 py-0.5 transition-all duration-75"
             type="text"
             name="username"
             maxLength={30}
@@ -148,7 +147,7 @@ export const AccessPage = () => {
           />
           <button
             type="submit"
-            className="bg-primary-400 hover:bg-primary-400/50 border-2 border-custom-brown-700 hover:border-custom-brown-900 rounded-xl py-0.5 px-1 transtion-all duration-75"
+            className="bg-primary-400 hover:bg-primary-400/50 border-2 border-secondary-700 hover:border-secondary-900 rounded-xl py-0.5 px-1 transtion-all duration-75"
           >
             Enviar
           </button>

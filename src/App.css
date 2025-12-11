@@ -2,13 +2,14 @@
  /* original base color 809848 */
 :root {
   --primary-color: #809848;
-  --secondary-color: #442220;
+  --secondary-color: rgb(68, 34, 32);
+ 
 }
 
 @theme {
   /* Hover */
   --color-primary-hover: oklch(
-    from var(--primary-color) calc(l * 1.35) calc(c * 0.8) calc(h * 0.9)
+    from var(--primary-color) calc(l * 1.45) calc(c * 0.9) calc(h * 1)
   );
 
   /* 50 */
@@ -34,16 +35,16 @@
     from var(--primary-color) calc(l * 0.85) calc(c * 0.75) h
   );
 
-  --color-custom-brown-700: oklch(from var(--secondary-color) l c h);
+  --color-secondary-700: oklch(from var(--secondary-color) l c h);
 
-  --color-custom-brown-900: oklch(
+  --color-secondary-900: oklch(
     from var(--secondary-color) calc(l * 0.7) calc(c * 0.75) h
   );
 }
 
 .chat-msgs {
   scrollbar-width: thin;
-  scrollbar-color: #809848 #d1e0b8;
+  scrollbar-color: var(--primary-color) var(--color-primary-hover);
   scrollbar-gutter: stable;
-  scrollbar-track-color: #809848;
+  scrollbar-track-color: var(--primary-color);
 }

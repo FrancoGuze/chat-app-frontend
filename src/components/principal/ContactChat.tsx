@@ -1,4 +1,4 @@
-import { useEffect, type JSX } from "react";
+import { useEffect, useState, type JSX } from "react";
 import type { MessageData } from "../../types";
 
 type Props = {
@@ -30,6 +30,8 @@ export const ContactChat = ({
   commonProps,
   ellipses,
 }: Props) => {
+  const [randomNum, setRandoNum] = useState<number[]>([0, 1]);
+  useEffect(() => setRandoNum([Math.random(), Math.random()]), []);
   const scrollHelper = () => {
     const chat = document.getElementById("chat-msgs");
     if (!chat) return;
@@ -45,7 +47,7 @@ export const ContactChat = ({
 
   return (
     <main
-      className={`flex flex-col w-full max-h-screen h-full absolute top-0 transition-all duration-100 ease-in-out overflow-hidden bg-primary-400 ${
+      className={`flex flex-col w-full max-h-screen h-full absolute top-0 transition-all duration-100 ease-in-out overflow-hidden bg-primary-400 z-80 ${
         actualContact ? "left-0" : "left-full"
       }`}
     >
@@ -84,9 +86,9 @@ export const ContactChat = ({
         </defs>
 
         <g
-          transform={`translate(${Math.ceil(Math.random() * 200) - 100},${
+          transform={`translate(${Math.ceil(randomNum[0] * 200) - 100},${
             Math.ceil(
-              Math.random() * 200 - (actualContact?.charCodeAt(0) || 1)
+             randomNum[1] * 200 - (actualContact?.charCodeAt(0) || 1)
             ) - 50
           })`}
           {...commonProps}
@@ -115,7 +117,7 @@ export const ContactChat = ({
           </svg>
         </button>
 
-        <h3 className="absolute left-1/2 -translate-x-1/2 text-center text-2xl text-custom-brown-900">
+        <h3 className="absolute left-1/2 -translate-x-1/2 text-center text-2xl text-secondary-900">
           {actualContact}
         </h3>
       </nav>
@@ -179,13 +181,10 @@ export const ContactChat = ({
             handleMsgInputChange(e);
           }}
           value={message}
-          className="grow bg-primary-400/40 rounded-xl px-1.5 py-1 resize-none overflow-y-hidden outline-0 border-2 border-custom-brown-700 focus:border-custom-brown-900 focus:bg-primary-400/50 transition-all duration-75"
+          className="grow bg-primary-400/40 rounded-xl px-1.5 py-1 resize-none overflow-y-hidden outline-0 border-2 border-secondary-700 focus:border-secondary-900 focus:bg-primary-400/50 transition-all duration-75"
         />
 
-        <button
-          type="submit"
-          className="bg-primary-400/30 rounded-full p-0.5"
-        >
+        <button type="submit" className="bg-primary-400/30 rounded-full p-0.5">
           <svg width={30} height={30} viewBox="0 0 28 28">
             <path
               d="M10 6 L20 14 L10 22"

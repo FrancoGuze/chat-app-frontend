@@ -138,7 +138,7 @@ export const Contacts = () => {
         <h1 className="text-center text-primary-50 text-xl font-bold col-start-1 col-span-2 justify-self-start">
           App de mensajeria instantánea
         </h1>
-        <Options className="justify-self-end" />
+        <Options className="justify-self-end relative" />
       </nav>
       <FindAddContactInput
         value={searchInput}
@@ -161,14 +161,15 @@ export const Contacts = () => {
             <li
               key={cnt}
               onClick={() => setActualContact(cnt)}
-              className=" group flex flex-row items-center cursor-pointer px-2 py-1 hover:bg-primary-hover bg-primary-400 transition-all duration-75 border-b sm:border-0 sm:rounded-full sm:py-1.5 sm:my-1 sm:shadow-[3px_3px_9px_0] shadow-custom-brown-900 "
+              className=" group flex flex-row items-center cursor-pointer px-2 py-1 hover:bg-primary-hover bg-primary-400 transition-all duration-75 border-b sm:border-0 sm:rounded-full sm:py-1.5 sm:my-1 sm:shadow-[3px_3px_9px_0] shadow-secondary-900 "
             >
-              <div className="w-7 h-7 rounded-full relative bg-primary-600 group-hover:bg-custom-brown-700 aspect-square mr-2 transition-all duration-75">
-                <p className="absolute top-[calc(50%-1.5px)] left-[calc(50%-0.5px)] font-bold -translate-x-1/2 -translate-y-1/2 text-sm text-custom-brown-700 group-hover:text-primary-600 transition-all duration-75">
+              <div className="w-7 h-7 rounded-full relative bg-primary-600 group-hover:bg-secondary-700 aspect-square mr-2 transition-all duration-75">
+                <p className="absolute top-[calc(50%-1.5px)] left-[calc(50%-0.5px)] font-bold -translate-x-1/2 -translate-y-1/2 text-sm text-secondary-700 group-hover:text-primary-600 transition-all duration-75">
                   {cnt.slice(0, 1)}
                 </p>
               </div>
               {cnt}
+              <span className="ml-auto mr-1 px-2 rounded-full bg-primary-hover">{serverMessages.filter((msg) => msg.from === cnt && msg.to === userName && msg.status !== "seen").length || ""}</span>
             </li>
           ))
         ) : (

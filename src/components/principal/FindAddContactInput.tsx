@@ -26,14 +26,14 @@ export const FindAddContactInput = ({
   };
 
   return (
-    <div className="w-full p-2 bg-custom-green-300 border-b border-custom-brown-700">
+    <div className="w-full p-2 bg-custom-green-300 border-b border-secondary-700">
       <form onSubmit={handleSubmit} className="flex gap-2">
         <input
           type="text"
           value={value}
           onChange={handleChange}
           placeholder="Search contacts..."
-          className="flex-1 px-3 py-1 rounded border border-custom-brown-700 text-custom-brown-700 focus:outline-none focus:ring-2 focus:ring-primary-600"
+          className="flex-1 px-3 py-1 rounded border border-secondary-700 text-secondary-700 focus:outline-none focus:ring-2 focus:ring-primary-600"
         />
 
         {!hasMatches && value.trim() && (
