@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { HexColorPicker, RgbColorPicker, type RgbColor } from "react-colorful";
+import {  RgbColorPicker, type RgbColor } from "react-colorful";
 
 export const Options = ({ className = "" }: { className: string }) => {
   const [primary, setPrimary] = useState<RgbColor>({ r: 128, g: 152, b: 72 });
