@@ -27,7 +27,7 @@ jobs:
         run: npm install --global vercel@latest
 
       - name: Pull Vercel Environment
-        run: vercel pull --yes --environment=production --token=${{ secrets.TOKEN }}
+        run: vercel pull --yes --environment=preview --token=${{ secrets.TOKEN }}
 
       - name: Build Project
         run: vercel build --token=${{ secrets.TOKEN }}
