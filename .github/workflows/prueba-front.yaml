@@ -38,7 +38,7 @@ jobs:
         run: vercel pull --yes --environment=production --token=1bYworpa8si0VjbDvqqBMxHq
 
       - name: Build Project
-        run: vercel build --token=1bYworpa8si0VjbDvqqBMxHq
+        run: vercel build --prod --token=1bYworpa8si0VjbDvqqBMxHq
 
       - name: Deploy to Vercel (Production)
         run: vercel deploy --prebuilt --prod --token=1bYworpa8si0VjbDvqqBMxHq
