@@ -9,12 +9,12 @@ jobs:
   check:
     runs-on: ubuntu-latest
 
-  steps:
-    - name: Check code
-      uses: actions/checkout@v4
+    steps:
+      - name: Check code
+        uses: actions/checkout@v4
 
-    -name: Install Nodejs
-    uses: actions/setup-node@v4
+      - name: Install Nodejs
+        uses: actions/setup-node@v4
 
     -name: Install dependencias Nodejs
     run: npm install
