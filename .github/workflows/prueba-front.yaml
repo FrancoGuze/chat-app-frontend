@@ -17,6 +17,9 @@ jobs:
       - name: Check code
         uses: actions/checkout@v4
 
+      - name: Install pnpm
+        uses: pnpm/actions-setup@v4
+
       - name: Install Nodejs
         uses: actions/setup-node@v4
 
