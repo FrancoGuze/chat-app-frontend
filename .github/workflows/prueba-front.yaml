@@ -9,23 +9,23 @@ jobs:
   check:
     runs-on: ubuntu-latest
 
-steps:
-  - name: Check code
-    uses: actions/checkout@v4
+  steps:
+    - name: Check code
+      uses: actions/checkout@v4
 
-  - name: Install Nodejs
-    uses: actions/setup-node@v4
+    - name: Install Nodejs
+      uses: actions/setup-node@v4
 
-  - name: Install dependencias Nodejs
-    run: npm install
+    - name: Install dependencias Nodejs
+      run: npm install
 
-  - name: Instalar Vercel CLI
-    run: npm install -g vercel
+    - name: Instalar Vercel CLI
+      run: npm install -g vercel
 
-  - name: Deploy to Vercel
-    uses: amondnet/vercel-action@v25
-    with:
-      vercel-token: ${{ secrets.token }}
-      vercel-org-id: ${{ secrets.orgId }}
-      vercel-project-id: ${{ secrets.projectId }}
-      vercel-args: "--prod"
+    - name: Deploy to Vercel
+      uses: amondnet/vercel-action@v25
+      with:
+        vercel-token: ${{ secrets.token }}
+        vercel-org-id: ${{ secrets.orgId }}
+        vercel-project-id: ${{ secrets.projectId }}
+        vercel-args: "--prod"
