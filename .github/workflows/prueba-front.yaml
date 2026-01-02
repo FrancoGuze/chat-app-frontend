@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
   steps:
-    -name: Check code
-    uses: actions/checkout@v4
+    - name: Check code
+      uses: actions/checkout@v4
 
     -name: Install Nodejs
     uses: actions/setup-node@v4
