@@ -6,8 +6,8 @@ on:
       - pruevas_devops
 
 env:
-  VERCEL_ORG_ID: ${{ secrets.orgId }}
-  VERCEL_PROJECT_ID: ${{ secrets.projectId }}
+  VERCEL_ORG_ID: ${{ secrets.ORGID }}
+  VERCEL_PROJECT_ID: ${{ secrets.PROJECTID }}
 
 jobs:
   check:
@@ -27,10 +27,10 @@ jobs:
         run: npm install --global vercel@latest
 
       - name: Pull Vercel Environment
-        run: vercel pull --yes --environment=production --token=${{ secrets.token }}
+        run: vercel pull --yes --environment=production --token=${{ secrets.TOKEN }}
 
       - name: Build Project
-        run: vercel build --token=${{ secrets.token }}
+        run: vercel build --token=${{ secrets.TOKEN }}
 
       - name: Deploy to Vercel (Production)
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.token }}
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.TOKEN }}
